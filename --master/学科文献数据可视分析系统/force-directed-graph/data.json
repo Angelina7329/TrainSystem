@@ -1,0 +1,15 @@
+{
+"nodes": [
+  {"name": "nodeA"},
+  {"name": "nodeB"},
+  {"name": "nodeC"},
+  {"name": "nodeD"},
+  {"name": "nodeE"},
+  {"name": "nodeF"}],
+"links": [
+  {"source": 0, "target":1},
+  {"source": 0, "target": 2},
+  {"source": 1, "target": 3},
+  {"source": 2, "target": 4},
+  {"source": 0, "target": 5}]
+}

@@ -1,0 +1,97 @@
+<!doctype html>
+<!--[if lt IE 7 ]><html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]><html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta name="author" content="ThemeFuse">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>学科数据可视分析系统</title>
+
+<!-- main JS libs -->
+<script src="js/libs/modernizr.min.js"></script>
+<script src="js/libs/jquery-1.10.0.js"></script>
+<script src="js/libs/jquery-ui.min.js"></script>
+<script src="js/libs/bootstrap.min.js"></script>
+
+<!-- Style CSS -->
+<link href="css/bootstrap.css" media="screen" rel="stylesheet">
+<link href="style.css" media="screen" rel="stylesheet">
+
+<!-- scripts -->
+<script src="js/general.js"></script>
+</head>
+
+<body>
+<div class="body_wrap">
+    <div class="container">
+
+        <!-- content -->
+        <div class="content " role="main">
+
+            <!-- row -->
+            <div class="row">
+                <div class="col-sm-8">
+                    <h6 class="foo">Menu</h6>
+
+                    <!-- Website Menu -->
+                    <div class="dropdown-wrap boxed-velvet">
+                        <ul class="dropdown inner clearfix">
+                            <li class="menu-level-0"><a href="./StreamGraph/index.html?data_id=1"  target="iframe_Layer1" onclick="document.all.bodyframe1.style.visibility='visible'"><span>Stream Graph</span></a>
+                            <ul class="submenu-1">
+                                <li class="menu-level-1"><a href="./StreamGraph/index.html?data_id=2" target="iframe_Layer1">SciVis</a></li>
+                                <li class="menu-level-1"><a href="./StreamGraph/index.html?data_id=3" target="iframe_Layer1">VAST</a></li>
+                                <li class="menu-level-1"><a href="./StreamGraph/index.html?data_id=4" target="iframe_Layer1">InfoVis</a></li>
+                            </ul>
+                            </li>
+                            <li class="menu-level-0"><a href="./force-directed-graph/force-directed-graph.html" target="iframe_Layer1" onclick="document.all.bodyframe1.style.visibility='visible'"><span>Force-Directed Graph</span></a>
+                                <ul class="submenu-1">
+                                    <li class="menu-level-1"><a href="#">Authors' Relation</a></li>
+                                    <li class="menu-level-1"><a href="#">Papers' Relation</a></li>
+                                        <ul class="submenu-2">
+                                            <li class="menu-level-2"><a href="#">Gallery images</a></li>
+                                            <li class="menu-level-2"><a href="#">OneByOne Slider</a></li>
+                                            <li class="menu-level-2"><a href="#">Video in header</a></li>
+                                            <li class="menu-level-2"><a href="#">Image &amp; Video Slider</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu-level-0"><a href="#"><span>Settings</span></a>
+                                <ul class="submenu-1">
+                                    <li class="menu-level-1"><a href="#">Privacy Policy</a></li>
+                                    <li class="menu-level-1"><a href="#">Copyright</a></li>
+                                    <li class="menu-level-1"><a href="#">Terms of Service</a>
+                                        <ul class="submenu-2">
+                                            <li class="menu-level-2"><a href="#">Gallery images</a></li>
+                                            <li class="menu-level-2"><a href="#">OneByOne Slider</a></li>
+                                            <li class="menu-level-2"><a href="#">Video in header</a></li>
+                                            <li class="menu-level-2"><a href="#">Image &amp; Video Slider</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu-level-0"><a href="#"><span>Log Out</span></a></li>
+                        </ul>
+                    </div>
+                    <!--/ Website Menu -->
+                </div>
+            </div>
+            <!--/ row -->
+
+            <div id = "bodyframe1" style="visibility:hidden">
+                <iframe sandbox="allow-popups allow-scripts allow-forms allow-same-origin" name="iframe_Layer1" marginwidth="0" marginheight="0" style="height:500px;width:1200px;margin-left:-100px;" scrolling="no"></iframe>
+            </div>
+            <div id = "bodyframe2" style="visibility:hidden">
+                <iframe sandbox="allow-popups allow-scripts allow-forms allow-same-origin" name="iframe_Layer2" marginwidth="0" marginheight="0" style="height:500px;width:1200px;margin-left:-100px;" scrolling="no"></iframe>
+            </div>
+        </div>
+        <!--/ content -->
+    </div>
+    <!--/ container -->
+</div>
+</body>
+</html>

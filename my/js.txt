@@ -1,0 +1,46 @@
+
+<script type="text/javascript"></script>					
+<script type="text/javascript">
+function validate()
+{
+var TrainNumber=document.getElementById("TrainNumber").value
+var DepartureTime=document.getElementById("DepartureTime").value
+var ArrivalTime=document.getElementById("ArrivalTime").value
+var StartLocation=document.getElementById("StartLocation").value
+var ArrivalLocation=document.getElementById("ArrivalLocation").value
+
+var string="你确定要删除:";
+
+if (!(TrainNumber.length<1))
+ {
+ string = string+'\n'+"车次为:"+TrainNumber+'\n';
+ }
+if (!(DepartureTime.length<1))
+ {
+ string = string+"发车时间为:"+DepartureTime+'\n';
+ }
+ if (!(ArrivalTime.length<1))
+ {
+ string = string+"到达时间为:"+ArrivalTime+'\n';
+ }
+ if (!(StartLocation.length<1))
+ {
+ string = string+"始发站为:"+StartLocation+'\n';
+ }
+ if (!(ArrivalLocation.length<1))
+ {
+ string = string+"终点站为:"+ArrivalLocation+'\n';
+ }
+ 
+ string = string+"的信息吗?"
+ 
+if(confirm(stri。ng。。00.00.
+0.
+ng))
+	alter("删除");
+else{
+	return false;
+}
+ 
+}
+</script>

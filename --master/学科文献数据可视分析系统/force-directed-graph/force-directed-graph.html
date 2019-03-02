@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style>
+.link {
+  stroke : #CCC;
+  stroke-width : 2;
+}
+.node text {
+  pointer-events : none;
+  font-size : 12px;
+  color:#fff;
+}
+.chart {
+  background: #fff;
+}
+svg { overflow : hidden; }
+</style>
+<script src="http://libs.useso.com/js/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://libs.useso.com/js/d3/3.4.8/d3.min.js"></script>
+<script>
+
+var nodes = [];
+var links = [];
+
+d3.json("data.json",function(error,root){
+            if( error ){
+                return console.log(error);
+            }
+          //  console.log(root);
+            nodes = root.nodes;
+            links = root.links;
+            random_color();draw();
+});
+
+//返回随机颜色代码
+function random_color() {
+    var letters = '0123456789ABCDEF'.split('');
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.round(Math.random() * 15)];
+    }
+    return color;
+}
+function draw() {
+  // var width = 400;
+  // var height = 300;
+  var margin = {top: 20, right: 40, bottom: 30, left: 30};
+  var width = document.body.clientWidth - margin.left - margin.right;
+  var height = 400 - margin.top - margin.bottom;
+  //设置svg宽度和高度
+  var svg = d3.select("#canvas svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom);
+  //设置Force-Directed力参数
+  var force = d3.layout.force()
+    .gravity(.05)
+    .distance(120)
+    .charge(-100)
+    .size([width, height]);
+  force
+    .nodes(nodes)
+    .links(links)
+    .start();
+  //选择边集合
+  var link = svg.selectAll(".link")
+    .data(links)
+    .enter().append("line")
+    .attr("class", "link");
+  //选择节点集合
+  var node = svg.selectAll(".node")
+    .data(nodes)
+    .enter().append("g")
+    .attr("class", "node")
+    .call(force.drag); //响应鼠标拖拽事件
+  //节点添加圆形图案
+  node.append("svg:circle").attr("r", 10)
+    .style("fill", function(){
+      return random_color();
+    })
+    .style("stroke", "#FFF").style("stroke-width", 3);
+    node.append("text")
+      .attr("dx", 12)
+      .attr("dy", ".36em")
+      .text(function(d) { return d.name });
+  //绑定tick事件
+  force.on("tick", function() {
+    link.attr("x1", function(d) { return d.source.x; })
+      .attr("y1", function(d) { return d.source.y; })
+      .attr("x2", function(d) { return d.target.x; })
+      .attr("y2", function(d) { return d.target.y; });
+    node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+  });
+}
+// $(function(){
+//   draw();
+// });
+</script>
+</head>
+<body>
+  <div id="canvas" class="chart">
+  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="300" ></svg>
+  </div>
+</body>
+</html>
